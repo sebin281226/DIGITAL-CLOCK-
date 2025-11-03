@@ -1,0 +1,26 @@
+TESTING PROCEDURE
+
+1) Oscillator Test (CD4060):
+Check that the oscillator generates a stable signal using a 32.768 kHz crystal.
+Verify the 1 Hz output by connecting an LED—it should blink once per second.
+
+2) Seconds Counter Test (CD4026):
+Apply the 1 Hz pulse to the first CD4026. The display should count 0–9, then
+reset. The carry-out pulse should trigger the next CD4026 for tens of seconds (0–
+5).
+
+3) Minutes and Hours Counter Test:
+Connect carry-outs properly and confirm that minutes increment after 60
+seconds and hours after 60 minutes. Ensure correct rollover at 23→00 (24-hour)
+or 12→1 (12-hour).
+
+4) Reset and Set Functions:
+Press reset to confirm all counters return to 00:00:00. Check that hour and
+minute set buttons work properly.
+
+5) Display and Accuracy Check:
+Ensure all 7-segment displays show clear digits without flicker. Let the clock run
+for a few hours and compare with a standard clock to verify time accuracy.
+
+6) Led’s connected to counters:
+Keeping led’s on the end of each counters to indicate 1Hz Supply on the counter
