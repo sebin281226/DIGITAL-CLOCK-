@@ -1,0 +1,44 @@
+The Digital Clock using CD4060 and CD4026 ICs works on the principle of
+frequency division and sequential counting to display real time in hours,
+minutes, and seconds. The operation can be divided into three main
+functional sections:
+
+
+1. Time Base Generation (CD4060 – Oscillator and Divider)
+● The CD4060 IC acts as an oscillator and 14-stage binary counter.
+● A 32.768 kHz quartz crystal is connected to its oscillator pins,
+producing a stable frequency used in digital clocks and watches.
+● The internal flip-flop stages divide this frequency down to 1 Hz (one
+pulse per second).
+● The 1 Hz output from the CD4060 provides the basic time signal that
+drives the counting section.
+
+
+2. Counting and Display (CD4026 – Counter and Decoder)
+● The CD4026 is a decade counter with an inbuilt 7-segment display
+driver.
+● Each incoming clock pulse increases its count by one (0–9) and
+updates the display automatically—no external decoder is needed.
+● When a CD4026 completes a full count (after 10 pulses), its carry-out
+(CO) pin sends a pulse to the next CD4026, enabling cascading
+between digit positions
+
+
+3. Time Display Sequence
+● Seconds: Two CD4026 ICs are used — one for units (0–9) and one for
+tens (0–5).
+● Minutes: Two CD4026 ICs handle the minute digits in the same way.
+● Hours: One or two CD4026 ICs count hours (depending on 12-hour or
+24-hour format).
+● After 59 seconds, the seconds section resets to 00, and the carry pulse
+increments the minute counter.
+● After 59 minutes, minutes reset, and hours increment.
+● After 12 or 24 hours, the entire clock resets to 00:00:00.
+
+
+4. Reset and Adjustment
+● A reset switch initializes the clock to 00:00:00.
+● Optional set buttons can feed manual pulses to the minute or hour
+counters for time adjustment.
+● Power is supplied by a 5V–9V DC source, and current-limiting resistors
+(220–330 Ω) protect the 7-segment displays.
