@@ -1,2 +1,2 @@
 # DIGITAL-CLOCK-
-developing easy digital clock only using ic's .
+Developing easy digital clock only using ic's .
